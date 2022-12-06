@@ -13,7 +13,7 @@ from typing import Any
 @ensure_annotations
 def read_yaml(path_to_yaml:Path) -> ConfigBox:
     try:
-        os.chdir(Path('f:\\Deepclassifier_project'))
+        
         with open(Path(path_to_yaml)) as yaml_file:
             content = yaml.safe_load(yaml_file)
             logger.info(f"yaml file at: {path_to_yaml} is loaded successfully")
