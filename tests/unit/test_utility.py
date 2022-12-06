@@ -4,8 +4,12 @@ from pathlib import Path
 from box import ConfigBox
 from ensure.main import EnsureError
 
+yaml_files = [
+        "tests/unit/data/empty.yaml",
+         "tests/unit/data/demo.yaml"
+         ]
+        
 class Test_read_yaml:
-    yaml_files = ["tests/unit/data/empty.yaml","tests/unit/data/demo.yaml"]
     
     def test_read_yaml_empty(self):
         with pytest.raises(ValueError):
