@@ -1,11 +1,11 @@
 import setuptools
 
-with open("READEME.md","r",encoding="utf-8") as f:
+with open("README.md","r",encoding="utf-8") as f:
     long_description = f.read()
 
 __version__ = "0.0.0"
 
-REPO_NAME = "DCNN_template"
+REPO_NAME = "DEEPCLASSIFIER_PROJECT"
 AUTHOR_USER_NAME = "Naresh_vssc"
 SRC_REPO = "deepClassifer"
 AUTOR_EMAIL = "naresh_ks@vssc.gov.in"
@@ -20,7 +20,7 @@ setuptools.setup(
     long_description_content = "text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_urls={
-        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",}
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues"},
     package_dir= {"":"src"},
     packages = setuptools.find_packages(where="src"),
         )
