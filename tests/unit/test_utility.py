@@ -7,9 +7,6 @@ from ensure.main import EnsureError
 class Test_read_yaml:
     yaml_files = ["tests/unit/data/empty.yaml","tests/unit/data/demo.yaml"]
     
-    def __init__(self):
-        pass
-
     def test_read_yaml_empty(self):
         with pytest.raises(ValueError):
             read_yaml(Path(yaml_files[0]))
