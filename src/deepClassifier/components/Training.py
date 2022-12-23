@@ -7,9 +7,8 @@ from deepClassifier.entity import TrainingConfig
 from pathlib import Path
 
 class Training:
-    def __init__(self,config:TrainingConfig,epochs):
+    def __init__(self,config:TrainingConfig):
         self.config = config
-        self.epochs = epochs
 
     def get_base_model(self):
         self.model = tf.keras.models.load_model(
@@ -62,7 +61,7 @@ class Training:
         self.step_per_epoch = self.train_generator.samples//self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples//self.valid_generator.batch_size
 
-        self.model.fit(self.train_generator,epochs=self.epochs,steps_per_epoch=self.step_per_epoch,validation_steps=self.validation_steps,
+        self.model.fit(self.train_generator,epochs=1,steps_per_epoch=self.step_per_epoch,validation_steps=self.validation_steps,
         validation_data = self.valid_generator,callbacks=callbacks_list)
 
         self.save_model(path=self.config.trained_model_path,model=self.model)
